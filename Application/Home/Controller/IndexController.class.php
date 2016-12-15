@@ -25,6 +25,15 @@ class IndexController extends HomeController {
         $this->assign('category',$category);//栏目
         $this->assign('lists',$lists);//列表
         $this->assign('page',D('Document')->page);//分页
+        
+        // 标题信息
+        $meta = array(
+            'meta_title' => C('WEB_SITE_TITLE'),
+            'meta_description' => C('WEB_SITE_DESCRIPTION'),
+            'meta_keyword' => C('WEB_SITE_KEYWORD'),
+        );
+        
+        $this->assign($meta);
 
                  
         $this->display();

@@ -37,5 +37,18 @@ class HomeController extends Controller {
 		/* 用户登录检测 */
 		is_login() || $this->error('您还没有登录，请先登录！', U('User/login'));
 	}
+	
+	/**
+	 * 渲染模板
+	 * @author Seven
+	 * @param array $output 输出到模板的变量
+	 * @param string $template 模板名称
+	 */
+	protected function toDisplay($output, $template = ''){
+	    
+	    $this->assign($output);
+	    $this->display($template);
+	    
+	}
 
 }
