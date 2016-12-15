@@ -17,7 +17,7 @@ return array(
     'TAGLIB_PRE_LOAD'     =>    'OT\\TagLib\\Article,OT\\TagLib\\Think',
         
     /* 主题设置 */
-    'DEFAULT_THEME' =>  'default',  // 默认模板主题名称
+    'DEFAULT_THEME' =>  'bbt168',  // 默认模板主题名称
 
     /* 数据缓存设置 */
     'DATA_CACHE_PREFIX' => 'onethink_', // 缓存前缀
@@ -59,9 +59,7 @@ return array(
     'TMPL_PARSE_STRING' => array(
         '__STATIC__' => __ROOT__ . '/Public/static',
         '__ADDONS__' => __ROOT__ . '/Public/' . MODULE_NAME . '/Addons',
-        '__IMG__'    => __ROOT__ . '/Public/' . MODULE_NAME . '/images',
-        '__CSS__'    => __ROOT__ . '/Public/' . MODULE_NAME . '/css',
-        '__JS__'     => __ROOT__ . '/Public/' . MODULE_NAME . '/js',
+        '__PUBLIC__' => __ROOT__ . '/Public/' . MODULE_NAME,
     ),
 
     /* SESSION 和 COOKIE 配置 */
