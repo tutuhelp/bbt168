@@ -1,1 +1,15 @@
 @CHARSET "UTF-8";
+
+/* bootstrap */
+.container{max-width:970px;padding:0px;}
+
+/* 间距 */
+.m-t-30{margin-top:30px;}
+
+/* header */
+.header{
+    background:url(images/top_bj.jpg) repeat-x center top #000;
+    height:187px;
+}
+.hot_phone{height:62px;}
+.hot_phone img{position:absolute; bottom:0px; right:0px;}
