@@ -1,13 +1,15 @@
 @CHARSET "UTF-8";
 body{
-    font-family:"PingFang-SC","Microsoft Yahei","微软雅黑",sans-serif;
-    font-size:16px;
+    font-family:"PingFang SC","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑",STHeiti,"华文细黑",sans-serif;
+    font-size:14px;
     line-height:1.6;
+    background-color:#eee;
 }
 /* bootstrap */
 .container{max-width:970px;padding:0px;}
 
 /* 间距 */
+.m-t-25{margin-top:25px;}
 .m-t-30{margin-top:30px;}
 
 /* header */
@@ -17,7 +19,7 @@ body{
 }
 .hot_phone{height:62px;}
 .hot_phone img{position:absolute; bottom:0px; right:15px;}
-.top-nav{height:95px;}
+.top-nav{height:100px;}
 .top-nav ul{
 	position:absolute; 
 	bottom:0px; 
@@ -30,10 +32,18 @@ body{
 	margin:0;
 	padding:0;
 }
-.top-nav ul li{float:left; height:75px; border-right:1px solid #ff7c00; background:url(images/nav_bg.png) no-repeat center;}
+.top-nav ul li{float:left; height:75px; border-right:1px solid #ff7c00; background:url(images/nav_bg.png) no-repeat center;padding-right:1px;}
 .top-nav ul li:last-child{border-right:none;}
+.top-nav ul li:first-child, .top-nav ul li:last-child{padding-right:0px;}
 .top-nav ul li:hover{background:url(images/nav_bg_hover.png) no-repeat center;}
 /*
 .nav li a{font-size:18px;font-weight:500;color:#2e0006;height:75px;width:100%;}
 .nav > li > a:hover, .nav > li > a:focus{background:none;color:#fff;}
 */
+
+/* footer */
+.footer{background:url(images/foot_bj.jpg) repeat-x center;height:138px;color:#fff;padding-top:20px;}
+
+
+/* article */
+.article{margin:60px 0; background-color:#fff; padding:30px; border:1px solid #e5e5e5;}
