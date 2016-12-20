@@ -27,8 +27,17 @@
 <div class="col-md-5 hot_phone"><img src="__PUBLIC__/bbt168/images/top_phone.png" alt="phone" ></div>
 </div>
 <div class="row">
-<div class="col-md-12">
-这个是导航
+<div class="col-md-12 top-nav">
+<ul>
+<think:nav name="nav">
+<eq name="nav.pid" value="0">
+<li>
+    <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>"><img class="nav-img" src="__PUBLIC__/bbt168/images/nav/{$nav.mark}.png" data-imgname="{$nav.mark}" alt="{$nav.title}"></a>
+</li>
+</eq>
+</think:nav>
+</ul>
+
 </div>
 </div>
 </div>
@@ -38,6 +47,17 @@
 <!-- content -->
 <!-- footer -->
 
-
+<script>
+$(".nav-img").mouseover(function(){
+    var img_name = $(this).attr("data-imgname");
+    var img_src = "__PUBLIC__/bbt168/images/nav/"+img_name+"_1.png";
+    $(this).attr("src",img_src);
+});
+$(".nav-img").mouseout(function(){
+    var img_name = $(this).attr("data-imgname");
+    var img_src = "__PUBLIC__/bbt168/images/nav/"+img_name+".png";
+    $(this).attr("src",img_src);
+});
+</script>
 </body>
 </html>

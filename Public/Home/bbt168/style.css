@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
-
+body{
+    font-family:"PingFang-SC","Microsoft Yahei","微软雅黑",sans-serif;
+    font-size:16px;
+    line-height:1.6;
+}
 /* bootstrap */
 .container{max-width:970px;padding:0px;}
 
@@ -12,4 +16,24 @@
     height:187px;
 }
 .hot_phone{height:62px;}
-.hot_phone img{position:absolute; bottom:0px; right:0px;}
+.hot_phone img{position:absolute; bottom:0px; right:15px;}
+.top-nav{height:95px;}
+.top-nav ul{
+	position:absolute; 
+	bottom:0px; 
+	left:15px;
+	border:0px solid;
+	border-top-left-radius:8px;
+	border-top-right-radius:8px; 
+	overflow:hidden;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.top-nav ul li{float:left; height:75px; border-right:1px solid #ff7c00; background:url(images/nav_bg.png) no-repeat center;}
+.top-nav ul li:last-child{border-right:none;}
+.top-nav ul li:hover{background:url(images/nav_bg_hover.png) no-repeat center;}
+/*
+.nav li a{font-size:18px;font-weight:500;color:#2e0006;height:75px;width:100%;}
+.nav > li > a:hover, .nav > li > a:focus{background:none;color:#fff;}
+*/
