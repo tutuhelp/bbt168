@@ -99,4 +99,53 @@ class ProductController extends AdminController{
         $this->toDisplay($output);
     }
     
+    /**
+     * 商品分类
+     * @author Seven
+     */
+    public function category(){
+        
+        $category = M('product_category');
+        $field = "*";
+        $map  = array('status' => array('gt', -1));
+        $list = $category->field($field)->where($map)->order('sort')->select();
+        $tree = list_to_tree($list, $pk = 'id', $pid = 'pid', $child = '_', $root = 0);
+        //dump($list);die;
+        $output = array();
+        $output['meta_title'] = "商品分类管理";
+        $output['tree'] = $tree;
+        
+        $this->toDisplay($output);
+    }
+    
+    /**
+     * 添加分类
+     * @author Seven
+     */
+    public function categoryAdd(){
+        
+        $category = M("product_category");
+        
+        if($category->create()){
+            $res = $category->add();
+            if($res){
+                $this->success("添加成功！",U("category"));
+            }
+        }
+        $this->error("添加失败！");
+    }
+    
+    /**
+     * 分类树形结构
+     * @author Seven
+     * @param array $tree
+     */
+    public function categoryTree($tree = null){       
+        
+        $output = array();
+        $output['tree'] = $tree;
+        $this->toDisplay($output,'tree');
+        
+    }
+    
 }
