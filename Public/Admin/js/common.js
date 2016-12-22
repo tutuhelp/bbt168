@@ -228,7 +228,7 @@ $(function(){
     $(window).resize(function(){
         var winW = $(window).width();
         var winH = $(window).height();
-        $(".upload-img-box").click(function(){
+        $(".upload-img-box1").click(function(){
         	//如果没有图片则不显示
         	if($(this).find('img').attr('src') === undefined){
         		return false;

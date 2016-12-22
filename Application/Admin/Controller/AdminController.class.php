@@ -445,5 +445,16 @@ class AdminController extends Controller {
 
         return $model->field($field)->select();
     }
+    
+    /**
+     * 渲染模板
+     * @author Seven
+     * @param array $output 输出到模板参数
+     * @param string $template 模板名称
+     */
+    protected function toDisplay($output, $template = ''){
+        $this->assign($output);
+        $this->display($template);
+    }
 
 }

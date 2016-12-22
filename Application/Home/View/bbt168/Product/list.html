@@ -1,0 +1,21 @@
+<extend name="Base/common"/>
+<block name="cssjs">
+<script src="__STATIC__/lightbox/js/lightbox-2.6.min.js"></script>
+<link href="__STATIC__/lightbox/css/lightbox.css" rel="stylesheet" />
+</block>
+<block name="body">
+<div class="article">
+<div class="row">
+
+<volist name="list" id="info">
+<div class="col-md-3 product-list">
+<a href="{$info.image}" data-lightbox="roadtrip" title="{$info.name}">
+<img class="m-b-15" src="{$info.image}" alt="{$info.name}" title="{$info.name}" />
+</a>
+<p class="text-center">{$info.name}</p>
+</div>
+</volist>
+
+</div>
+</div>
+</block>

@@ -11,6 +11,7 @@ body{
 /* 间距 */
 .m-t-25{margin-top:25px;}
 .m-t-30{margin-top:30px;}
+.m-b-15{margin-bottom:15px;}
 
 /* header */
 .header{
@@ -49,10 +50,15 @@ body{
 .article{
 	margin:10px 0; 
 	background-color:#fff; 
-	padding:60px 30px; 
+	padding:30px 30px; 
 	border:1px solid #e5e5e5; 
 	box-shadow: -10px 0 10px #e5e5e5,
 	10px 0 10px #e5e5e5,
 	0 0 10px #e5e5e5,
 	10px 0 10px #e5e5e5;
 	}
+	
+/* product */	
+.product-list{min-height:300px; overflow:hidden; cursor:pointer; border:1px solid #fff; padding:15px;}
+.product-list:hover{border-color:#feb31c;}
+.product-list img{width:100%;}
