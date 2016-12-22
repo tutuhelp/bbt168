@@ -1,0 +1,242 @@
+*{margin:0; padding:0;}
+body{margin:0 auto; padding:0; background-color:#FF6}
+#box{width:950px; margin:auto; padding:0; height:auto;}
+
+.pic02{background:url(pic_02.jpg) no-repeat; height:120px; position:relative;}
+
+.pic12{background:url(pic_12.jpg) no-repeat; height:120px; position:relative;}
+.pic12 .t1{
+	width:396px;
+	height:102px;
+	position: absolute;
+	left: 463px;
+	top: 43px;
+}
+.pic12 div{ font-family:"微软雅黑"; font-size:14px; line-height:24px; color:#ffffff;}
+
+.pic15{background:url(pic_15.jpg) no-repeat; height:120px; position:relative;}
+.pic15 .t1{
+	width:163px;
+	height:76px;
+	position: absolute;
+	left: 287px;
+	top: 12px;
+}
+.pic15 .t2{
+	width:168px;
+	height:69px;
+	position: absolute;
+	left: 74px;
+	top: 12px;
+}
+.pic15 .t3{
+	width:159px;
+	height:64px;
+	position: absolute;
+	left: 498px;
+	top: 15px;
+}
+.pic15 div{ font-family:"微软雅黑"; font-size:14px; line-height:22px; color:#000000;}
+
+.pic40{background:url(pic_40.jpg) no-repeat; height:120px; position:relative;}
+.pic40 .t1{
+	width:164px;
+	height:109px;
+	position: absolute;
+	left: 93px;
+	top: 10px;
+}
+.pic40 .t2{
+	width:178px;
+	height:124px;
+	position: absolute;
+	left: 281px;
+	top: 9px;
+}
+.pic40 .t3{
+	width:198px;
+	height:106px;
+	position: absolute;
+	left: 483px;
+	top: 9px;
+}
+.pic40 .t4{
+	width:171px;
+	height:101px;
+	position: absolute;
+	left: 292px;
+	top: 276px;
+}
+.pic40 .t5{
+	width:167px;
+	height:114px;
+	position: absolute;
+	left: 483px;
+	top: 280px;
+}
+.pic40 .t6{
+	width:157px;
+	height:105px;
+	position: absolute;
+	left: 686px;
+	top: 279px;
+}
+.pic40 div{ font-family:"微软雅黑"; font-size:14px; line-height:24px; color:#000000;}
+
+.pic46{background:url(pic_46.jpg) no-repeat; height:120px; position:relative;}
+.pic46 .t1{
+	width:701px;
+	height:38px;
+	position: absolute;
+	left: 178px;
+	top: 87px;
+}
+.pic46 .t2{
+	width:602px;
+	height:38px;
+	position: absolute;
+	left: 213px;
+	top: 178px;
+}
+.pic46 .t3{
+	width:602px;
+	height:38px;
+	position: absolute;
+	left: 202px;
+	top: 270px;
+	text-align:center;
+}
+.pic46 .t4{
+	width:742px;
+	height:49px;
+	position: absolute;
+	left: 141px;
+	top: 394px;
+}
+.pic46 div{ font-family:"微软雅黑"; font-size:18px; line-height:33px; color:#000000;}
+
+
+.pic54{background:url(pic_54.jpg) no-repeat; height:120px; position:relative;}
+.pic54 .t1{
+	width:157px;
+	height:109px;
+	position: absolute;
+	left: 32px;
+	top: -19px;
+}
+.pic54 .t2{
+	width:157px;
+	height:109px;
+	position: absolute;
+	left: 216px;
+	top: -17px;
+}
+.pic54 .t3{
+	width:138px;
+	height:107px;
+	position: absolute;
+	left: 408px;
+	top: -15px;
+}
+.pic54 .t4{
+	width:137px;
+	height:105px;
+	position: absolute;
+	left: 591px;
+	top: -16px;
+}
+.pic54 .t5{
+	width:142px;
+	height:110px;
+	position: absolute;
+	left: 771px;
+	top: -17px;
+}
+.pic54 div{ font-family:"微软雅黑"; font-size:14px; line-height:22px; color:#000000;}
+
+.pic56{background:url(pic_56.jpg) no-repeat; height:120px; position:relative;}
+.pic56 .t1{
+	width:139px;
+	height:121px;
+	position: absolute;
+	left: 49px;
+	top: 78px;
+}
+.pic56 .t2{
+	width:145px;
+	height:92px;
+	position: absolute;
+	left: 212px;
+	top: 80px;
+}
+.pic56 .t3{
+	width:147px;
+	height:112px;
+	position: absolute;
+	left: 378px;
+	top: 80px;
+}
+.pic56 .t4{
+	width:139px;
+	height:121px;
+	position: absolute;
+	left: 552px;
+	top: 79px;
+}
+.pic56 .t5{
+	width:151px;
+	height:105px;
+	position: absolute;
+	left: 43px;
+	top: 228px;
+}
+.pic56 .t6{
+	width:144px;
+	height:87px;
+	position: absolute;
+	left: 210px;
+	top: 227px;
+}
+.pic56 .t7{
+	width:150px;
+	height:86px;
+	position: absolute;
+	left: 380px;
+	top: 226px;
+}
+.pic56 .t8{
+	width:140px;
+	height:92px;
+	position: absolute;
+	left: 549px;
+	top: 226px;
+}
+.pic56 div{ font-family:"微软雅黑"; font-size:14px; line-height:22px; color:#ffffff;}
+
+.pic18{background:url(pic_18.jpg) no-repeat; height:196px;position:relative;}
+.pic18 iframe{
+	height:190px;
+	position:absolute;
+	left:15px;
+	top: 3px;
+	width: 921px;
+}
+.pic26{background:url(pic_26.jpg) no-repeat; height:204px;position:relative;}
+.pic26 iframe{
+	height:200px;
+	position:absolute;
+	left:0px;
+	top: 3px;
+	width: 951px;
+}
+
+
+.liuyanban{ width:950px; height:472px; background:url(pic_59.jpg) no-repeat; position:relative;}
+.liuyanban div.s{
+	position:absolute;
+	width:726px;
+	height:431px;
+	left:110px;
+	top: 19px;
+}
+img{display:block;}

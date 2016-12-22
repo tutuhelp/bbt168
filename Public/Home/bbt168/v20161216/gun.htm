@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>产品滚动展示</title>
+<style type="text/css">
+body {
+	background-color: #FFF;
+}
+</style>
+</head><body leftmargin="0" topmargin="0" marginheight="0" marginwidth="0">
+<table border="0" cellpadding="0" cellspacing="0" height="190">
+  <tbody>
+  <tr>
+    <td valign="top" align="left"><div id="marquee" style="overflow: hidden; width:950px; height:190px;">
+      <table align="left" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td id="marquee1" valign="top"><table border="0" cellpadding="0" cellspacing="2" height="190">
+              <tbody>
+                <tr>
+                  <td><img src="./gun_files/01.jpg"></td>
+				  <td><img src="./gun_files/02.jpg"></td>
+				  <td><img src="./gun_files/03.jpg"></td>
+				  <td><img src="./gun_files/04.jpg"></td>
+				  <td><img src="./gun_files/05.jpg"></td>
+				  <td><img src="./gun_files/06.jpg"></td>
+				  <td><img src="./gun_files/07.jpg"></td>
+				  <td><img src="./gun_files/08.jpg"></td>
+				  <td><img src="./gun_files/09.jpg"></td>
+                  <td><img src="./gun_files/10.jpg"></td>
+                   <td><img src="./gun_files/11.jpg"></td>
+                    <td><img src="./gun_files/12.jpg"></td>
+                     <td><img src="./gun_files/13.jpg"></td>
+                      <td><img src="./gun_files/14.jpg"></td>
+                      <td><img src="./gun_files/15.jpg"></td>
+                      <td><img src="./gun_files/16.jpg"></td>
+                      <td><img src="./gun_files/17.jpg"></td>
+                      <td><img src="./gun_files/18.jpg"></td>
+                      <td><img src="./gun_files/19.jpg"></td>
+                      <td><img src="./gun_files/20.jpg"></td>
+			
+
+                  </tr>
+              </tbody>
+            </table></td>
+            <td id="marquee2" valign="top"><table border="0" cellpadding="0" cellspacing="2" height="190">
+              <tbody>
+                <tr>
+                  <td><img src="./gun_files/01.jpg"></td>
+				  <td><img src="./gun_files/02.jpg"></td>
+				  <td><img src="./gun_files/03.jpg"></td>
+				  <td><img src="./gun_files/04.jpg"></td>
+				  <td><img src="./gun_files/05.jpg"></td>
+				  <td><img src="./gun_files/06.jpg"></td>
+				  <td><img src="./gun_files/07.jpg"></td>
+				  <td><img src="./gun_files/08.jpg"></td>
+				  <td><img src="./gun_files/09.jpg"></td>
+                  <td><img src="./gun_files/10.jpg"></td>
+                   <td><img src="./gun_files/11.jpg"></td>
+                    <td><img src="./gun_files/12.jpg"></td>
+                     <td><img src="./gun_files/13.jpg"></td>
+                      <td><img src="./gun_files/14.jpg"></td>
+                      <td><img src="./gun_files/15.jpg"></td>
+                      <td><img src="./gun_files/16.jpg"></td>
+                      <td><img src="./gun_files/17.jpg"></td>
+                      <td><img src="./gun_files/18.jpg"></td>
+                      <td><img src="./gun_files/19.jpg"></td>
+                      <td><img src="./gun_files/20.jpg"></td>
+			
+
+                  </tr>
+              </tbody>
+            </table></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>      <script language="JavaScript">
+					
+					mSpeed=10;
+					marQueeObj = document.getElementById("marquee");
+					marQuee1Obj = document.getElementById("marquee1");
+					marQuee2Obj = document.getElementById("marquee2");
+					marQuee2Obj.innerHTML=marQuee1Obj.innerHTML;
+					function Marquees(){
+						if(marQuee2Obj.offsetWidth-marQueeObj.scrollLeft<=0){
+							marQueeObj.scrollLeft-=marQuee1Obj.offsetWidth;
+						}else{
+							marQueeObj.scrollLeft++;
+						}
+					}
+					MyMar=setInterval(Marquees,mSpeed);
+					marQueeObj.onmouseover=function() {clearInterval(MyMar)}
+					marQueeObj.onmouseout=function() {MyMar=setInterval(Marquees,mSpeed)}
+				
+</script>
+</td></tr></tbody></table></body></html>

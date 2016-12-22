@@ -46,4 +46,13 @@ body{
 
 
 /* article */
-.article{margin:60px 0; background-color:#fff; padding:30px; border:1px solid #e5e5e5;}
+.article{
+	margin:10px 0; 
+	background-color:#fff; 
+	padding:60px 30px; 
+	border:1px solid #e5e5e5; 
+	box-shadow: -10px 0 10px #e5e5e5,
+	10px 0 10px #e5e5e5,
+	0 0 10px #e5e5e5,
+	10px 0 10px #e5e5e5;
+	}
