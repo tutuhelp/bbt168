@@ -68,3 +68,33 @@ function get_nav_url($url){
     }
     return $url;
 }
+
+/**
+ * 数据分页
+ * @author Seven
+ * @param int $count 总记录数
+ * @param int $rows 每页显示记录数
+ * @return string 分页结果
+ */
+function page($count, $rows = 0){
+
+    if((int)$rows <= 0){
+        $rows = C('LIST_ROWS');
+    }
+
+    $Page = new \Think\Page($count,$rows);// 实例化分页类 传入总记录数和每页显示的记录数
+
+    //让最后一页设置有效
+    $Page->lastSuffix = false;
+    /* 设置样式 */
+    //$Page->setConfig('header','<span class="rows">共 %TOTAL_ROW% 条记录，每页'.$rows.'条，共%TOTAL_PAGE%页</span>');
+    $Page->setConfig('first',"第一页");
+    $Page->setConfig('last',"最后一页");
+    $Page->setConfig('prev',"上一页");
+    $Page->setConfig('next',"下一页");
+    $Page->setConfig('theme', '%HEADER% <span class="page">%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%</span>');
+
+    $show = $Page->show();// 分页显示输出
+
+    return "<div class=\"data-page\">{$show}</div>";
+}

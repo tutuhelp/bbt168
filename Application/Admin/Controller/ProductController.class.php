@@ -211,6 +211,42 @@ class ProductController extends AdminController{
     }
     
     /**
+     * 变更分类状态
+     * @author Seven
+     */
+    public function categorySetStatus(){
+        $this->setStatus('product_category');
+    }
+    
+    /**
+     * 删除一个分类
+     * @author Seven
+     */
+    public function remove(){
+        $cate_id = I('id');
+        if(empty($cate_id)){
+            $this->error('参数错误!');
+        }
+    
+        //判断该分类下有没有子分类，有则不允许删除
+        $child = M('product_category')->where(array('pid'=>$cate_id))->field('id')->select();
+        if(!empty($child)){
+            $this->error('请先删除该分类下的子分类');
+        }
+    
+        //判断该分类下有没有内容
+        $document_list = M('products')->where(array('cid'=>$cate_id))->field('id')->select();
+        if(!empty($document_list)){
+            $this->error('请先删除该分类下的商品（包含回收站）');
+        }
+    
+        $where = array('id'=>$cate_id);
+        //删除该分类信息
+        $this->delete('product_category',$where);
+
+    }
+    
+    /**
      * 分类树形结构
      * @author Seven
      * @param array $tree

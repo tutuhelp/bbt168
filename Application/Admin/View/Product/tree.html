@@ -5,7 +5,7 @@
 				
 				<div class="fold"><i></i></div>
 				<div class="order"><input type="text" name="sort" class="text input-mini" value="{$list.sort}"></div>
-				<div class="order">{$list['mark']}</div>
+				<div class="order">{$list['status']}</div>
 				<div class="name">
 					<span class="tab-sign"></span>
 					<input type="hidden" name="id" value="{$list.id}">
@@ -15,7 +15,7 @@
 				</div>
 				<div class="btn-toolbar opt-btn cf">
                     <a title="编辑" href="{:U('categoryEdit?id='.$list['id'].'&pid='.$list['pid'])}">编辑</a>
-                    <a title="{$list.status|show_status_op}" href="{:U('setStatus?ids='.$list['id'].'&status='.abs(1-$list['status']))}" class="ajax-get">{$list.status|show_status_op}</a>
+                    <a title="{$list.status|show_status_op}" href="{:U('categorySetStatus?ids='.$list['id'].'&status='.abs(1-$list['status']))}" class="ajax-get">{$list.status|show_status_op}</a>
                     <a title="删除" href="{:U('remove?id='.$list['id'])}" class="confirm ajax-get">删除</a>
                 </div>
 			</form>

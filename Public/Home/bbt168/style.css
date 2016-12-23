@@ -4,6 +4,7 @@ body{
     font-size:14px;
     line-height:1.6;
     background-color:#eee;
+    
 }
 /* bootstrap */
 .container{max-width:970px;padding:0px;}
@@ -12,6 +13,7 @@ body{
 .m-t-25{margin-top:25px;}
 .m-t-30{margin-top:30px;}
 .m-b-15{margin-bottom:15px;}
+.m-t-15{margin-top:15px;}
 
 /* header */
 .header{
@@ -48,17 +50,26 @@ body{
 
 /* article */
 .article{
-	margin:10px 0; 
+	margin:0 0 10px 0; 
 	background-color:#fff; 
-	padding:30px 30px; 
+	padding:30px; 
 	border:1px solid #e5e5e5; 
-	box-shadow: -10px 0 10px #e5e5e5,
-	10px 0 10px #e5e5e5,
-	0 0 10px #e5e5e5,
-	10px 0 10px #e5e5e5;
+	box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+	width:100%;
 	}
 	
-/* product */	
+/* product */
 .product-list{min-height:300px; overflow:hidden; cursor:pointer; border:1px solid #fff; padding:15px;}
 .product-list:hover{border-color:#feb31c;}
 .product-list img{width:100%;}
+
+/* page */
+.data-page{text-align:center; color:#999;}
+.current{font-weight:bold;color:#feb31c;}
+.data-page a,.page span{padding:10px;}
+.data-page a:hover{color:#feb31c;}
+
+/* category */
+.category{border-bottom:1px solid rgba(0, 0, 0, 0.1); margin:0 0 30px 0; padding-bottom:30px;}
+.category a{color:#666;margin-right:30px;}
+.category a:hover{color:#feb31c;}

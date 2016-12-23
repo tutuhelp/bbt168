@@ -4,7 +4,21 @@
 <link href="__STATIC__/lightbox/css/lightbox.css" rel="stylesheet" />
 </block>
 <block name="body">
+<notempty name="categories">
+
+</notempty>
+
+
 <div class="article">
+
+<div class="row m-t-15 category">
+    <div class="col-md-12">
+    <a href="#">分类1</a>
+    <a href="#">分类2</a>
+    <a href="#">分类3</a>
+    </div>
+</div>
+
 <div class="row">
 
 <volist name="list" id="info">
@@ -17,5 +31,15 @@
 </volist>
 
 </div>
+
+<div class="row m-t-15">
+    <div class="col-md-12">
+    {$page}
+    </div>
 </div>
+
+</div>
+
+
+
 </block>
