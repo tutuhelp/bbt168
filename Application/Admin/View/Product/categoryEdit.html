@@ -1,0 +1,62 @@
+<extend name="Public/base" />
+
+<!-- 子导航 -->
+<block name="sidebar"> <include file="sidemenu" /> </block>
+
+<block name="body"> 
+<div class="main-title cf">
+	<h2>编辑商品分类</h2>
+</div>
+<!-- 标签页导航 -->
+<div class="tab-wrap">
+
+	<div class="tab-content">
+		<!-- 表单 -->
+		<form id="form" action="{:U("Product/categoryEdit")}"
+			method="post" class="form-horizontal">
+			<input name="id" value="{$info.id}" type="hidden">
+			<!-- 基础文档模型 -->
+			<div id="tab1" class="tab-pane in tab1">
+				<div class="form-item cf">
+					<label class="item-label">分类名称<span class="check-tips">（30个字以内）</span></label>
+					<div class="controls">
+						<input class="text input-large" name="name" value="{$info.name|default=''}" type="text">
+					</div>
+				</div>
+				<div class="form-item cf">
+					<label class="item-label">父分类<span class="check-tips"></span></label>
+					<div class="controls">
+						<select name="pid" class="input-large">
+				           <option value="0">顶级分类</option>
+				           <volist name="tree" id="list">
+				           <option value="{$list.id}">{$list.name}</option>
+				           </volist>
+				         </select>
+					</div>
+				</div>
+				
+				<div class="form-item cf">
+                    <label class="item-label">分类标记<span class="check-tips">（用于程序识别分类）</span></label>
+                    <div class="controls">
+                        <input class="text input-large" name="mark" value="{$info.mark|default=''}" type="text">
+                    </div>
+                </div>
+				
+			</div>
+			<div class="form-item cf">
+				<button class="btn submit-btn ajax-post hidden" id="submit"
+					type="submit" target-form="form-horizontal">确 定</button>
+				<a class="btn btn-return"
+					href="{:U("category")}">返 回</a>
+			</div>
+		</form>
+	</div>
+
+
+
+</div>
+<script type="text/javascript">
+//分类选中
+$("select[name=pid]").val("{$info.pid}");
+</script>
+</block>

@@ -9,6 +9,22 @@ namespace Admin\Controller;
 class ProductController extends AdminController{
     
     /**
+     * 分类树结构
+     * @var array
+     */
+    private $categories;
+    
+    public function __construct(){
+        
+        parent::__construct();
+        
+        $map  = array('status' => array('gt', -1));
+        $categories = M("product_category")->field($field)->where($map)->order('sort')->select();
+        
+        $this->categories = $categories;
+    }
+    
+    /**
      * 商品列表
      * @author Seven
      */
@@ -53,6 +69,11 @@ class ProductController extends AdminController{
             die;
         }
         
+        $output = array(
+            'meta_title' => "新增商品"
+        );
+        $output['tree'] = D("Tree","Logic")->toFormatTree($this->categories);
+        
         $this->toDisplay($output);
         
     }
@@ -92,9 +113,11 @@ class ProductController extends AdminController{
             $this->error("商品不存在");
         }
     
-        $output = array();
+        $output = array(
+            'meta_title' => "编辑商品"
+        );
+        $output['tree'] = D("Tree","Logic")->toFormatTree($this->categories);
         $output['info'] = $data;
-        $output['meta_title'] = "编辑商品";
     
         $this->toDisplay($output);
     }
@@ -105,12 +128,13 @@ class ProductController extends AdminController{
      */
     public function category(){
         
-        $category = M('product_category');
-        $field = "*";
-        $map  = array('status' => array('gt', -1));
-        $list = $category->field($field)->where($map)->order('sort')->select();
-        $tree = list_to_tree($list, $pk = 'id', $pid = 'pid', $child = '_', $root = 0);
-        //dump($list);die;
+//         $category = M('product_category');
+        
+//         $field = "*";
+//         $map  = array('status' => array('gt', -1));
+//         $list = $category->field($field)->where($map)->order('sort')->select();
+        $tree = list_to_tree($this->categories, $pk = 'id', $pid = 'pid', $child = '_', $root = 0);
+        //dump($tree);die;
         $output = array();
         $output['meta_title'] = "商品分类管理";
         $output['tree'] = $tree;
@@ -133,6 +157,57 @@ class ProductController extends AdminController{
             }
         }
         $this->error("添加失败！");
+    }
+    
+    /**
+     * 编辑商品分类
+     * @author Seven
+     */
+    public function categoryEdit(){
+        
+        $id = I('id',0);
+        
+        if(empty($id)){
+            $this->error("错误请求！");
+        }
+        
+        $category = M('product_category');
+        
+        
+        
+        if(IS_POST){
+            
+            if($category->create()){
+                $res = $category->save();
+                
+                if($res !== false){
+                    $this->success("编辑成功！",U("category"));
+                }
+                
+            }
+            $this->error("编辑失败！");
+            die;
+        }
+        
+        $where = array(
+            'pid' => 0,
+            'status' => array("egt",0),
+            'id' => array("neq",$id),
+            
+        );
+        //获取所有顶级分类
+        $parent = $category->where($where)->order('sort')->select();
+        
+        $info = $category->where(array('id'=>$id))->find();
+        
+        $output = array();
+        
+        $output['meta_title'] = "编辑商品分类";
+        $output['tree'] = $parent;
+        $output['info'] = $info;
+        
+        $this->toDisplay($output);
+        
     }
     
     /**
