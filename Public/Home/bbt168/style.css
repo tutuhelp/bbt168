@@ -45,7 +45,7 @@ body{
 */
 
 /* footer */
-.footer{background:url(images/foot_bj.jpg) repeat-x center;height:138px;color:#fff;padding-top:20px;}
+.footer{background:url(images/foot_bj.jpg) repeat center; min-height:138px;color:#fff;padding-top:20px;}
 
 
 /* article */
@@ -70,6 +70,6 @@ body{
 .data-page a:hover{color:#feb31c;}
 
 /* category */
-.category{border-bottom:1px solid rgba(0, 0, 0, 0.1); margin:0 0 30px 0; padding-bottom:30px;}
-.category a{color:#666;margin-right:30px;}
+.category{border-bottom:1px solid rgba(0, 0, 0, 0.1); margin:0 0 30px 0; padding-bottom:15px;}
+.category a{color:#666; width:100px; display:block; float:left; margin-bottom:15px;}
 .category a:hover{color:#feb31c;}

@@ -3,42 +3,57 @@ namespace Home\Controller;
 
 class ProductController extends HomeController{
     
-    public function __construct(){
+//     private $categories;
+    
+//     public function __construct(){
         
-        parent::__construct();
+//         parent::__construct(); 
         
-//         $cid = I('get.cid',0);
-        
-//         if(empty($cid)){
-//             $this->error("页面不存在！");
-//         }
-        
-        $categories = M('product_category')->where("status=1")->order('sort')->select();
-        
-        //dump($categories);die;
-        
-    }
+//     }
     
     /**
-     * 样品
+     * 商品列表
      * @author Seven
      */
-    public function sample($p = 1){
+    public function index($p = 1, $id = 0){
         
-        //查询样品的分类id
+//         if($id=="all"){
+//             $ids = 
+//         }
+        $cid = intval($id);
         
-        //样品分类的子ID
+        if($cid != $id){
+            $this->error("分类不存在！");
+        }
         
-        //查询所有样品分类下的商品
         
+        $format = $this->formatCategory();
         
         $where = array(
             'status' => 1,
         );
         
+        if($cid > 0){
+            
+            $info = $format['key'][$cid];
+            //dump($info);die;
+            if(empty($info)){
+                $this->error("分类不存在！");
+            }
+            
+            $ids = array($cid);
+            //dump($format['parent'][$cid]);die;
+            if($info['pid'] == 0 && !empty($format['parent'][$cid])){
+                //所有子分类ID
+                $ids = array_merge($ids,$format['parent'][$cid]);
+            }
+            //查询所有分类下的商品
+            $where['cid'] = array('in',$ids);
+        }
+
         $row = 12;
         //商品列表
-        $list = M("products")->page($p, $row)->where($where)->select();
+        $list = M("products")->page($p, $row)->where($where)->order("id DESC")->select();
         $count = M("products")->where($where)->count();
         
         
@@ -47,8 +62,35 @@ class ProductController extends HomeController{
         );
         $output['list'] = $list;
         $output['page'] = page($count, $row);
+        $output['category'] = $format['key'];
         
         $this->toDisplay($output,'list');
+        
+    }
+    
+    /**
+     * 格式化分类
+     * @author Seven
+     */
+    private function formatCategory(){
+        
+        $format = array();
+        
+        $categories = M('product_category')->where("status=1")->order('sort')->select();
+        
+        //取出所有ID
+        $format['ids'] = array_column($categories, 'id');
+        
+        foreach($categories as $v){
+            //父类做索引，子分类做值
+            if($v['pid'] > 0){
+                $format['parent'][$v['pid']][] = $v['id'];
+            }
+            //分类的ID作为索引
+            $format['key'][$v['id']] = $v; 
+        }
+        
+        return $format;
         
     }
     

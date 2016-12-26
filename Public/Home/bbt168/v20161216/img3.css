@@ -1,6 +1,7 @@
 *{margin:0; padding:0;}
-body{margin:0 auto; padding:0; background-color:#FF6}
+body{margin:0 auto; padding:0; }
 #box{width:950px; margin:auto; padding:0; height:auto;}
+#main-container{background-color:#FF6;}
 
 .pic02{background:url(pic_02.jpg) no-repeat; height:120px; position:relative;}
 

@@ -4,22 +4,21 @@
 <link href="__STATIC__/lightbox/css/lightbox.css" rel="stylesheet" />
 </block>
 <block name="body">
-<notempty name="categories">
-
-</notempty>
-
 
 <div class="article">
 
 <div class="row m-t-15 category">
-    <div class="col-md-12">
-    <a href="#">分类1</a>
-    <a href="#">分类2</a>
-    <a href="#">分类3</a>
+    <div class="col-xs-12">
+	    <a href="{:U("Product/index")}">所有商品</a>
+	    <foreach name="category" item="cate">
+	    <a href="{:U("Product/index?id=".$cate['id'])}">{$cate['name']}</a>
+	    </foreach>
     </div>
 </div>
 
 <div class="row">
+
+<notempty name="list">
 
 <volist name="list" id="info">
 <div class="col-md-3 product-list">
@@ -29,7 +28,9 @@
 <p class="text-center">{$info.name}</p>
 </div>
 </volist>
-
+<else />
+<p class="text-center">暂无商品信息</p>
+</notempty>
 </div>
 
 <div class="row m-t-15">
@@ -37,6 +38,7 @@
     {$page}
     </div>
 </div>
+
 
 </div>
 
