@@ -7,7 +7,17 @@
 // | Author: 麦当苗儿 <zuojiazi@vip.qq.com> <http://www.zjzit.cn>
 // +----------------------------------------------------------------------
 
-if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
+//if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
+
+/**
+ * 前台访问时直接绑定Home模块，后台访问正常
+ * 保证前台url中不包含前台模块
+ */
+$is_admin = stripos($_SERVER['REQUEST_URI'],"/backend/");
+if($is_admin === false){
+    define('BIND_MODULE','Home');
+}
+
 
 /**
  * 系统调试设置

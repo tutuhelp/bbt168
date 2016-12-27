@@ -97,5 +97,6 @@ return array(
     'URL_CASE_INSENSITIVE'  =>  true, //URL不区分大小写
     'URL_PATHINFO_DEPR'=>'-', //URL链接符号
     'URL_MODEL' =>'2', //URL类型，伪静态
+    //'BIND_MODULE' => 'Home',
 
 );

@@ -26,6 +26,7 @@ class Dispatcher {
         $varModule      =   C('VAR_MODULE');
         $varController  =   C('VAR_CONTROLLER');
         $varAction      =   C('VAR_ACTION');
+        
         if(isset($_GET[$varPath])) { // 判断URL里面是否有兼容模式参数
             $_SERVER['PATH_INFO'] = $_GET[$varPath];
             unset($_GET[$varPath]);
@@ -99,6 +100,7 @@ class Dispatcher {
             // 绑定模块
             define('BIND_MODULE',$_GET[$varModule]);
         }
+        
         // 分析PATHINFO信息
         if(!isset($_SERVER['PATH_INFO'])) {
             $types   =  explode(',',C('URL_PATHINFO_FETCH'));
@@ -122,7 +124,7 @@ class Dispatcher {
         // URL后缀
         define('__EXT__', strtolower(pathinfo($_SERVER['PATH_INFO'],PATHINFO_EXTENSION)));
 
-        if (__INFO__ && C('MULTI_MODULE') && !isset($_GET[$varModule])){ // 获取模块
+        if (!defined('BIND_MODULE') && __INFO__ && C('MULTI_MODULE') && !isset($_GET[$varModule])){ // 获取模块
             $paths      =   explode($depr,__INFO__,2);
             $allowList  =   C('MODULE_ALLOW_LIST');
             $module     =   preg_replace('/\.' . __EXT__ . '$/i', '',$paths[0]);
@@ -140,7 +142,7 @@ class Dispatcher {
         define('__SELF__',strip_tags($_SERVER[C('URL_REQUEST_URI')]));
 
         // 获取模块名称
-        define('MODULE_NAME', self::getModule($varModule));
+        define('MODULE_NAME', defined('BIND_MODULE')? BIND_MODULE : self::getModule($varModule));
         // 检测模块是否存在
         if( MODULE_NAME && (!in_array_case(MODULE_NAME,C('MODULE_DENY_LIST')) || $domainModule ) && is_dir(APP_PATH.MODULE_NAME)){
             
