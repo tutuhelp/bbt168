@@ -8,13 +8,12 @@
 // +----------------------------------------------------------------------
 
 //if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
+$host = $_SERVER['HTTP_HOST'];
+$request_url = $_SERVER['REQUEST_URI'];
 /**
  * 非www跳转到www
  */
-$host = $_SERVER['HTTP_HOST'];
-$request_url = $_SERVER['REQUEST_URI'];
 $is_www = stripos($host, "www.");
-
 if($is_www === false){
     header( "HTTP/1.1 301 Moved Permanently" );
     header( "Location: http://www.{$host}{$request_url}" );
