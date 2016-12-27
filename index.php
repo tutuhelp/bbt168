@@ -8,12 +8,24 @@
 // +----------------------------------------------------------------------
 
 //if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
+/**
+ * 非www跳转到www
+ */
+$host = $_SERVER['HTTP_HOST'];
+$request_url = $_SERVER['REQUEST_URI'];
+$is_www = stripos($host, "www.");
+
+if($is_www === false){
+    header( "HTTP/1.1 301 Moved Permanently" );
+    header( "Location: http://www.{$host}{$request_url}" );
+    die;
+}
 
 /**
  * 前台访问时直接绑定Home模块，后台访问正常
  * 保证前台url中不包含前台模块
  */
-$is_admin = stripos($_SERVER['REQUEST_URI'],"/backend/");
+$is_admin = stripos($request_url,"/backend/");
 if($is_admin === false){
     define('BIND_MODULE','Home');
 }
