@@ -9,7 +9,7 @@ class PageController extends HomeController{
      */
     public function about(){
         $output = array(
-            ''
+            'meta_title' => '公司简介',
         );
         $this->toDisplay($output);
     }
@@ -19,7 +19,7 @@ class PageController extends HomeController{
      */
     public function dream(){
         $output = array(
-            ''
+            'meta_title' => '梦想拍',
         );
         $this->toDisplay($output);
     }

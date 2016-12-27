@@ -49,6 +49,9 @@ class ProductController extends HomeController{
             }
             //查询所有分类下的商品
             $where['cid'] = array('in',$ids);
+            $meta_title = $info['name'];
+        }else{
+            $meta_title = "所有商品";
         }
 
         $row = 12;
@@ -58,7 +61,7 @@ class ProductController extends HomeController{
         
         
         $output = array(
-            'meta_title' => "样品列表"
+            'meta_title' => $meta_title,
         );
         $output['list'] = $list;
         $output['page'] = page($count, $row);

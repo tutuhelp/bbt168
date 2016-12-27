@@ -84,6 +84,11 @@ class ArticleController extends HomeController {
 		$this->assign('category', $category);
 		$this->assign('info', $info);
 		$this->assign('page', $p); //页码
+		$meta = array(
+		    'meta_title' => $info['title'],
+		    'meta_description' => $info['description'],
+		);
+		$this->assign($meta);
 		$this->display($tmpl);
 	}
 
